@@ -226,8 +226,6 @@ pub async fn mempool_watching(target_address: String) -> Result<()> {
                                 if tx.max_fee_per_gas.unwrap_or_default()
                                     > U256::from(next_base_fee)
                                 {
-                                    // 🛑 we haven't defined trace_state_diff yet, we will
-                                    // so this will error at this point
                                     match trace_state_diff(
                                         provider.clone(),
                                         &tx,
